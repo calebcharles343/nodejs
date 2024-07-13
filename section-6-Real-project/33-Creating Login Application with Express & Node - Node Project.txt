@@ -1,0 +1,19 @@
+Note:
+1, create a folder 'login_system'
+2, inside 'login_system' create a file server.js
+3, open 'login_system' in terminal
+4, npm init -y(with default values): to initialise 'login_system' folder as NPM package
+5, npm i express
+6, npm i nodemon: to avoid manual restart of server
+7, npm i ejs: embeded javascript template
+8, npm i express-session
+9, npm i body-parser: to return posted data in json format
+10, npm i uuid: to create random uuid for session varieble
+11, create 'server.js' with express app
+12, create 'views' folder 
+13, create 'base.ejs' file in 'views' folder : for dynamic html : for separation of concern
+14, create 'header.ejs' file in 'views' folder : for dynamic html : for separation of concern
+15, create 'footer.ejs' file in 'views' folder : for dynamic html : for separation of concern
+
+
+

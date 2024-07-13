@@ -1,0 +1,68 @@
+**Routing in Node.js** refers to determining how an application responds to 
+client requests at specific endpoints (URLs). Essentially, it's about 
+handling different routes or URLs within your application. Let's dive into 
+the details:
+
+1. **Routing Basics**:
+   - **Endpoints**: In a web application, endpoints correspond to different 
+       pages or functionalities. Each endpoint is identified by a URI 
+       (Uniform Resource Identifier) or path and a specific HTTP request 
+       method (e.g., GET, POST).
+   - **Handler Functions**: When a client request matches an endpoint, a
+       handler function is called to process the request and send an 
+       appropriate response.
+
+2. **Using Express Framework**:
+   - **Express.js** is a popular Node.js framework that simplifies routing. 
+       It provides an `app` object for defining routes.
+   - For a **GET request**, you can use the `app.get()` method:
+     ```javascript
+     const express = require('express');
+     const app = express();
+     
+     app.get('/', function(req, res) {
+         res.send('Hello, Sir!');
+     });
+     ```
+   - For **POST requests**, use the `app.post()` method similarly.
+
+3. **Routing Without Express**:
+   - If you want to build your own server without dependencies, you can
+     handle routing from scratch using Node.js built-in modules.
+   - Example (without Express):
+     ```javascript
+     const http = require('http');
+     
+     http.createServer(function (req, res) {
+         const url = req.url;
+         if (url === '/about') {
+             res.write('Welcome to the About Us page');
+             res.end();
+         } else if (url === '/contact') {
+             res.write('Welcome to the Contact Us page');
+             res.end();
+         } else {
+             res.write('Hello, World!');
+             res.end();
+         }
+     }).listen(3000, function () {
+         console.log("Server started on port 3000");
+     });
+     ```
+   - In this example, different URLs (`/about`, `/contact`, etc.) are
+     handled based on the client's request.
+
+Remember, routing allows your application to respond appropriately to
+different paths and methods. Whether you use Express or build your own 
+routing logic, it's a crucial part of web development! 🚀
+
+¹: [GeeksforGeeks: Routing in Node](https://www.geeksforgeeks.org/routing-in-node-js/)
+²: [MarketSplash: Node.js Routing](https://marketsplash.com/node-js-routing/)
+³: [Naukri Code 360: Routing in Node.js](https://www.naukri.com/code360/library/routing-in-node-js)
+⁴: [MDN Web Docs: Express Tutorial Part 4](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes)
+
+Source: Conversation with Copilot, 7/9/2024
+(1) Routing in Node - GeeksforGeeks. https://www.geeksforgeeks.org/routing-in-node-js/.
+(2) What Is Node.js Routing And Its Application In Web Development. https://marketsplash.com/node-js-routing/.
+(3) Routing in Node.js - Naukri Code 360. https://www.naukri.com/code360/library/routing-in-node-js.
+(4) Express Tutorial Part 4: Routes and controllers - MDN Web Docs. https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes.

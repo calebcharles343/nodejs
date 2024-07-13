@@ -1,0 +1,8 @@
+TIPS: IN Package.json file
+
+1,"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "execute" : "node fileName" : fileName will run on execute(creating CMD)
+  },
+2, in TERMINAL : npm run execute : to run file
+

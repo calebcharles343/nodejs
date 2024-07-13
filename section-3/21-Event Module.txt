@@ -1,0 +1,50 @@
+Certainly! In Node.js, the **Events module** plays a crucial role in creating,
+firing, and listening for custom events. Let's dive into the details:
+
+1. **EventEmitter Class**: The heart of the Events module is the 
+    `EventEmitter` class. It allows you to raise and handle events. Most of 
+    Node.js's core API is built around this module, where certain objects 
+    (called "emitters") emit named events, triggering corresponding functions 
+    (also known as listeners) to be called¹.
+
+2. **Event Emission and Handling**:
+   - Objects that emit events are instances of the `EventEmitter` class.
+   - You can attach one or more listener functions to named events using 
+     the `eventEmitter.on()` method.
+   - Event names are typically camel-cased strings, but any valid JavaScript 
+     property key can be used.
+   - When an emitter object emits an event, all attached listener functions 
+     are called synchronously.
+   - Values returned by listeners are ignored and discarded.
+
+3. **Example**:
+   ```javascript
+   import { EventEmitter } from 'node:events';
+
+   class MyEmitter extends EventEmitter {}
+   const myEmitter = new MyEmitter();
+
+   myEmitter.on('event', () => {
+       console.log('An event occurred!');
+   });
+
+   myEmitter.emit('event');
+   ```
+
+4. **Passing Arguments and `this` to Listeners**:
+   - The `eventEmitter.emit()` method allows passing an arbitrary set of 
+     arguments to listener functions.
+   - The standard `this` keyword inside a listener refers to the 
+     `EventEmitter` instance to which the listener is attached.
+   - Arrow functions as listeners break this behavior, as `this` no longer 
+     references the `EventEmitter` instance¹.
+
+Remember, Node.js's event-driven architecture is powerful for handling 
+asynchronous tasks, making it a fundamental part of building scalable and 
+responsive applications. 🚀
+
+Source: Conversation with Copilot, 7/10/2024
+(1) Events | Node.js v22.4.1 Documentation. https://nodejs.org/api/events.html.
+(2) Node.js Events - W3Schools. https://www.w3schools.com/nodejs/nodejs_events.asp.
+(3) Node.js Events - GeeksforGeeks. https://www.geeksforgeeks.org/node-js-events/.
+(4) Handling and dispatching events with Node.js - LogRocket Blog. https://blog.logrocket.com/handling-and-dispatching-events-with-node-js/.

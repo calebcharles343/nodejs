@@ -1,0 +1,6 @@
+Note:
+1, use bootstrap CDN link to add style in 'header.ejs' file
+2, style form
+3, create 'public' folder : for custom styles
+4, create 'style.css' file in 'public' folder: to add custom styles
+5, inform server to use static asset 'style.css' file

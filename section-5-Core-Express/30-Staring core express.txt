@@ -1,0 +1,9 @@
+Starting core express
+ADVANCE TOPICS
+1, Sessions
+2, Cookies
+3, Core Middleware
+4, core Routing
+5, Build own API's
+6, core views
+7, Database integration

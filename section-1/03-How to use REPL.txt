@@ -1,0 +1,24 @@
+REPL(Read Evaluate print Loop): is a simple interactive computer 
+programming environment that allows you to run code interactively. 
+Here’s how it works:
+
+1, Read: The REPL reads a single user input (usually a line of code).
+2, Evaluate: It evaluates the input, executing the code.
+3, Print: The result of the evaluation is printed back to the user.
+4, The process repeats for each input.
+
+REPLs are available for various programming languages, including Python, 
+C/C++, JavaScript, and Smalltalk1. They’re great for testing ideas, 
+exploring libraries, debugging, and experimenting with code. Python’s 
+standard REPL, for example, lets you quickly write and execute Python 
+code interactively2. If you’re familiar with the command line, you’ll 
+find REPLs useful for your development workflow.
+
+### REPL TIPS IN TERMINAL ###
+Note: No windows Object in node.
+- To access REPL: node.
+- To access method of a class: e.g Number.Tab[key]
+- to access global variable: global.Tab[key]
+- to get help: .help
+- to exit REPL: .exit
+

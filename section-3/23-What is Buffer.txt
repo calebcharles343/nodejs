@@ -1,0 +1,54 @@
+In **Node.js**, a **Buffer** is a fundamental class used for working with 
+raw binary data. Let's explore what Buffers are and how they are used:
+
+1. **What is a Buffer?**
+   - A **Buffer** represents a fixed-size chunk of memory, typically 
+     allocated outside the V8 JavaScript engine.
+   - Unlike JavaScript arrays, Buffers deal specifically with binary data.
+   - Buffers are essential for handling binary data efficiently, especially 
+     when reading from or writing to files, sockets, or other I/O operations.
+
+2. **Key Points**:
+   - Buffers store a sequence of integers (usually representing bytes).
+   - Once created, the size of a Buffer cannot be changed.
+   - Buffers can be manipulated directly at the binary level, making them 
+     useful for tasks like encoding/decoding, hashing, and encryption.
+   - Common use cases include reading files, handling network data, and 
+     working with binary protocols.
+
+3. **Creating Buffers**:
+   - You can create a Buffer using various methods:
+     - `Buffer.from(array)`: Creates a Buffer from an array of integers.
+     - `Buffer.from(string, encoding)`: Creates a Buffer from a string.
+     - `Buffer.alloc(size)`: Allocates a new zero-filled Buffer of the 
+        specified size.
+     - `Buffer.allocUnsafe(size)`: Allocates a new Buffer without 
+        initializing its contents (faster but unsafe).
+     - `Buffer.allocUnsafeSlow(size)`: Similar to `allocUnsafe`, but slower 
+        and safer.
+     - `new Buffer(arrayBuffer[, byteOffset[, length]])`: Creates a Buffer 
+        from an ArrayBuffer.
+     - ...and more.
+
+4. **Example**:
+   ```javascript
+   // Creating a Buffer from a string
+   const myString = 'Hello, world!';
+   const myBuffer = Buffer.from(myString, 'utf8');
+
+   // Manipulating the Buffer
+   myBuffer[0] = 72; // Change the first byte to ASCII code for 'H'
+   console.log(myBuffer.toString('utf8')); // Prints 'Hello, world!'
+   ```
+
+Remember that Buffers are crucial for low-level operations in Node.js, 
+especially when dealing with binary data. 🚀
+
+For more details, you can refer to the official [Node.js documentation on Buffers](https://nodejs.org/api/buffer.html)¹. If you have any specific use case or need further assistance, feel free to ask! 😊
+
+Source: Conversation with Copilot, 7/10/2024
+(1) Buffer | Node.js v22.4.1 Documentation. https://nodejs.org/api/buffer.html.
+(2) What is Buffer in Node.js - GeeksforGeeks. https://www.geeksforgeeks.org/what-is-buffer-in-node-js/.
+(3) Using Buffers in Node.js | DigitalOcean. https://www.digitalocean.com/community/tutorials/using-buffers-in-node-js.
+(4) Buffers in Node.js. “Explore the intricacies of Node.js… | by mahdi .... https://m-mdy-m.medium.com/buffers-in-node-js-c285f5416fdb.
+(5) Node.js buffer: A complete guide - LogRocket Blog. https://blog.logrocket.com/node-js-buffer-complete-guide/.

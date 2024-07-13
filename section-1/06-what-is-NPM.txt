@@ -1,0 +1,45 @@
+**npm** stands for **Node Package Manager**. It's a library and registry 
+for JavaScript software packages. Here's what you need to know:
+
+1. **Software Registry**: npm is the world's largest software registry, 
+containing over 800,000 code packages. Open-source developers use it to 
+share software, and many organizations use it to manage private development.
+
+2. **Package Manager**: npm allows you to easily install and manage 
+dependencies for your Node.js projects. You can use npm commands to 
+download and install different packages.
+
+3. **Dependencies**: All npm packages are defined in files called 
+`package.json`. This file specifies the project's dependencies 
+(other packages it relies on). You can manage these dependencies using npm.
+
+4. **Free to Use**: npm is free, and you can download public software 
+packages without any registration or login.
+
+5. **Installation**: npm comes bundled with Node.js. To use npm, you need 
+to install Node.js first. You can download Node.js from the official website.
+
+6. **Publishing Your Own Packages**: If you want to share your own software 
+on the npm registry, you can sign in at [npmjs.com](https://www.npmjs.com). 
+Once logged in, you can publish your project using the `npm publish` command.
+
+Remember, npm simplifies package management and makes it easy to collaborate 
+with other developers! 🚀
+
+TIPS(in TERMINAL)
+1, To create package.json file - npm init
+2, To create package.json file with default values - npm init -y
+3, to install npm package from a public repo- npm install packageName
+4, npm install packageName -save : for runtime 
+5, npm install packageName --save-dev : for development development phase
+6, npm uninstall packageName -D packageName : for development development phase
+7, npm install packageName : also for runtime  and installs only on project
+8, npm install packageName -g: to install globally on machine
+9, npm uninstall -g packageName: to uninstall globally on machine
+10, npm root -g : to locate global dependencies folder 
+
+note:
+Dependencies: These are modules that are required at runtime
+devDependencies: These are modules that are required at development phase.
+
+ 

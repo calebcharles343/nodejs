@@ -1,0 +1,59 @@
+Certainly! Let's explore **async/await** in JavaScript:
+
+1. **Async Functions**:
+   - An **async function** is a function that always returns a promise.
+   - When you declare a function with the `async` keyword, it ensures that
+     the function returns a promise.
+   - If you return a non-promise value, it is automatically wrapped in a
+     resolved promise.
+   - For example:
+     ```javascript
+     async function f() {
+       return 1;
+     }
+     f().then(alert); // Outputs: 1
+     ```
+   - You can also explicitly return a promise using `Promise.resolve(1)`.
+
+2. **Await Keyword**:
+   - The `await` keyword works only inside **async functions**.
+   - It makes JavaScript wait until a promise settles (either resolves or
+     rejects) and returns its result.
+   - Here's an example with a promise that resolves in 1 second:
+     ```javascript
+     async function f() {
+       let promise = new Promise((resolve, reject) => {
+         setTimeout(() => resolve("done!"), 1000);
+       });
+       let result = await promise;
+       alert(result); // Outputs: "done!"
+     }
+     f();
+     ```
+   - The function execution pauses at the `await` line and resumes when the
+     promise settles.
+
+3. **Benefits of Await**:
+   - Await simplifies handling asynchronous code compared to using `.then()`.
+   - It doesn't consume CPU resources while waiting, allowing other tasks to
+     proceed.
+   - It's more elegant and easier to read and write.
+
+4. **Example Using Await**:
+   - Let's rewrite the `showAvatar()` example using async/await:
+     ```javascript
+     async function showAvatar() {
+       let response = await fetch('/article/promise-chaining/user.json');
+       let user = await response.json();
+       let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+       let githubUser = await githubResponse.json();
+       let img = document.createElement('img');
+       img.src = githubUser.avatar_url;
+       img.className = "promise-avatar-example";
+       document.body.append(img);
+       await new Promise((resolve) => setTimeout(resolve, 3000));
+     }
+     ```
+
+Remember, async/await simplifies handling promises and makes asynchronous code more readable! 🚀
+[1](https://javascript.info/async-await) [2](https://www.programiz.com/javascript/async-await) [3](https://www.javascripttutorial.net/javascript-async-await/) [4](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) [5](https://www.w3schools.com/Js/js_async.asp)

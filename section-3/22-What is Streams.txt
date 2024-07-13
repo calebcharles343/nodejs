@@ -1,0 +1,51 @@
+In **Node.js**, **streams** are an essential part of handling and 
+manipulating data efficiently. Let's dive into the details:
+
+1. **Stream Basics**:
+   - A stream is an abstract interface for working with streaming data in 
+     Node.js.
+   - The `node:stream` module provides an API for implementing the stream 
+     interface.
+   - Many objects in Node.js, such as requests to an HTTP server and 
+     `process.stdout`, are stream instances.
+   - Streams can be **readable**, **writable**, or both.
+   - All streams are instances of the `EventEmitter` class, which means 
+     they emit events at various points in their lifecycle¹.
+
+2. **Types of Streams**:
+   - **Readable Streams**: These allow data to be read 
+     (e.g., `fs.createReadStream()`).
+   - **Writable Streams**: These accept data for writing 
+     (e.g., `fs.createWriteStream()`).
+   - **Duplex Streams**: These are both readable and writable 
+     (e.g., `net.Socket`).
+   - **Transform Streams**: Duplex streams that modify or transform data as 
+     it is written and read (e.g., `zlib.createDeflate()`).
+
+3. **Example**:
+   ```javascript
+   const fs = require('node:fs');
+   const zlib = require('node:zlib');
+
+   // Create a pipeline to compress a file
+   async function run() {
+       await stream.pipeline(
+           fs.createReadStream('archive.tar'),
+           zlib.createGzip(),
+           fs.createWriteStream('archive.tar.gz')
+       );
+       console.log('Pipeline succeeded.');
+   }
+
+   run().catch(console.error);
+   ```
+
+Streams are versatile and efficient, especially for handling large datasets 
+without loading everything into memory. 🚀
+
+Source: Conversation with Copilot, 7/10/2024
+(1) Stream | Node.js v22.4.1 Documentation. https://nodejs.org/api/stream.html.
+(2) Mastering Node.js Streams: A Comprehensive Guide. https://dev.to/mrrishimeena/mastering-nodejs-streams-a-comprehensive-guide-37bb.
+(3) Understanding Streams in Node.js: A Deep Dive. https://clouddevs.com/node/streams/.
+(4) Node.js Streams: Everything you need to know - freeCodeCamp.org. https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/.
+(5) github.com. https://github.com/akhdrv/nex/tree/91ed66123dc047e7dca684df224a34035318cdee/deps%2Fnode%2Fdoc%2Fapi%2Fstream.md.

@@ -1,0 +1,47 @@
+The **Node.js** `path` module provides utilities for working with file 
+and directory paths. Here are some commonly used methods from the `path` 
+module:
+
+1. **`path.basename(path[, suffix])`**: Returns the last portion of a path 
+   (the file name) from the given `path`. You can optionally provide a 
+   `suffix` to remove from the file name.
+2. **`path.dirname(path)`**: Returns the directory name of a `path`.
+3. **`path.extname(path)`**: Returns the file extension (including the dot) 
+   from the given `path`.
+4. **`path.join([...paths])`**: Joins all given path segments into a single 
+   path.
+5. **`path.normalize(path)`**: Normalizes the given `path`, resolving any 
+   `..` and `.` segments.
+6. **`path.parse(path)`**: Parses a `path` into an object with properties 
+   like `root`, `dir`, `base`, `name`, and `ext`.
+7. **`path.resolve([...paths])`**: Resolves an absolute path from the given 
+   path segments.
+8. **`path.sep`**: A platform-specific path segment separator 
+   (`/` on Unix-like systems, `\` on Windows).
+9. **`path.isAbsolute(path)`**: Checks if the given `path` is an absolute 
+   path.
+10. **`path.toNamespacedPath(path)`**: Converts the given `path` to a 
+   namespace-prefixed path (Windows only).
+11. **`path.posix`**: An object providing POSIX-specific path methods.
+12. **`path.win32`**: An object providing Windows-specific path methods.
+
+To get the path of the currently executing script/module, you can use the
+ `__dirname` global variable. It returns the directory path of the currently 
+ executing script. For example:
+
+```javascript
+const path = require("path");
+const modulePath = path.join(__dirname, "models");
+```
+
+Remember to adjust the path using `../` if needed to reach the root of your 
+module. If you're looking for the complete path to a specific module that 
+you've loaded via `require`, you can use `require.resolve("moduleName")` 
+to get the resolved filename²³. Additionally, if you've installed a module 
+using npm, you can set the modules path directly in your JavaScript file⁴. 🚀
+
+Source: Conversation with Copilot, 7/10/2024
+(1) In Node.js how can I tell the path of `this` module?. https://stackoverflow.com/questions/5215871/in-node-js-how-can-i-tell-the-path-of-this-module.
+(2) node.js - How can I get the path of a module I have loaded via require .... https://stackoverflow.com/questions/10111163/how-can-i-get-the-path-of-a-module-i-have-loaded-via-require-that-is-not-mine.
+(3) npm - node.js modules path - Stack Overflow. https://stackoverflow.com/questions/13465829/node-js-modules-path.
+(4) Path | Node.js v22.4.0 Documentation. https://nodejs.org/api/path.html.
