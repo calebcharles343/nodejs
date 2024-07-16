@@ -1,0 +1,40 @@
+Note:
+1, require('body-parcer')
+    {
+              Certainly! Let's talk about **`body-parser`** in the context 
+              of **Node.js**. It's like the friendly neighborhood helper that 
+              makes dealing with incoming HTTP request bodies a breeze! 🌟
+
+        1. **What Is `body-parser`?**
+          - **`body-parser`** is a **Node.js middleware** used to extract 
+               information from incoming HTTP requests.
+          - Imagine you're running a web server, and someone sends you data 
+            (like form submissions or JSON payloads). `body-parser` steps in, 
+            processes that data, and hands it to you in a neat, parsed format.
+          - It's like having a personal assistant who unboxes and organizes 
+            your incoming parcels—except these parcels are HTTP requests! 📦🕵️‍♂️
+
+        2. **What Does It Do?**
+          - When a client (like a browser or a mobile app) sends data to your 
+            server, it usually arrives as part of the request body.
+          - `body-parser` takes care of:
+            - Parsing JSON data: If someone sends you data in JSON format 
+              (like an API request), `body-parser` unpacks it and gives you 
+              a nice JavaScript object.
+            - Handling URL-encoded form data: When someone submits a form on a 
+              website, the form data arrives as URL-encoded key-value pairs. 
+              `body-parser` decodes this for you.
+            - Managing raw text or binary data: Sometimes you get plain text or 
+              binary data. `body-parser` can handle that too.
+          - Essentially, it's the bridge between raw request data and your 
+            server logic. 🌉
+    }
+
+2, require('express-session')
+
+3, create a 'router.js' file in the main project folder.
+4, write login logic in the 'router.js' file
+5, module.exports = router;
+6, open 'base.ejs' file to specify action and method on the form tag 
+   <form action = '/route/login' method = 'POST'> 
+7, require('./router) as module
