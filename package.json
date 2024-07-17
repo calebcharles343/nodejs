@@ -32,6 +32,7 @@
     "jshint": "^2.13.6",
     "lodash": "^4.17.21",
     "minimatch": "^3.0.8",
+    "morgan": "^1.10.0",
     "nodemon": "^3.1.4",
     "once": "^1.4.0",
     "path-is-absolute": "^1.0.1",
@@ -45,7 +46,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "execute": "node index.js",
-    "start": "nodemon section-6-Real-project/server.js"
+    "start": "nodemon section-10-Intro-to-MongoDB-Database/server.js"
   },
   "keywords": [],
   "author": "",

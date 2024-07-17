@@ -1,0 +1,93 @@
+Creating middleware in Node.js is a fundamental concept, 
+especially when building applications with frameworks like Express. 
+Middleware allows you to inject custom logic into the request-response cycle. 
+Let's walk through the steps to create a simple middleware application:
+
+1. **Setting Up Your Project:**
+   First, create a new folder for your project (if you haven't already).
+   You can use the following command to initialize a new Node.js project:
+   ```bash
+   npm init -y
+   ```
+
+2. **Create a Basic Server:**
+   Next, create a file (let's call it `server.js`) where you'll define your 
+   server. In this example, we'll use Express, but you can adapt this to 
+   other frameworks as well. Install Express if you haven't already:
+   
+   ```bash
+   npm install express
+   ```
+
+3. **Defining Middleware:**
+   Now, let's create a simple middleware that logs information about each 
+   incoming request. In your `server.js` file, add the following code:
+   
+   ```javascript
+   const express = require('express');
+   const app = express();
+
+   // Custom middleware: logs the request time
+   const requestTimeMiddleware = (req, res, next) => {
+       req.requestTime = Date.now();
+       console.log(`Request received at ${new Date(req.requestTime)}`);
+       next(); // Move to the next middleware or route handler
+   };
+
+   // Use the middleware for all routes
+   app.use(requestTimeMiddleware);
+
+   // Define your routes here (e.g., app.get('/', ...))
+
+   // Start the server
+   const PORT = process.env.PORT || 3000;
+   app.listen(PORT, () => {
+       console.log(`Server listening on port ${PORT}`);
+   });
+   ```
+   In this example:
+   - We create a middleware function called `requestTimeMiddleware`.
+   - It adds a `requestTime` property to the `req` object, capturing the 
+     timestamp when the request was received.
+   - The `next()` function ensures that the request continues to the next 
+     middleware or route handler.
+
+4. **Using Your Middleware:**
+   You can now use `req.requestTime` in your route handlers to access the 
+   timestamp. For instance:
+   ```javascript
+   app.get('/', (req, res) => {
+       res.send(`Hello! Request received at ${new Date(req.requestTime)}`);
+   });
+   ```
+
+5. **Test Your Middleware:**
+   Start your server (`node server.js`) and make requests to it. You'll see 
+   the log messages indicating when each request was received.
+
+Remember that middleware can be more complex than this—handling 
+authentication, error handling, or modifying request/response objects. 
+But this simple example should give you a good starting point! 😊
+
+If you'd like more detailed examples or have any other questions, 
+feel free to ask! 🚀⁴⁵⁶⁷
+
+Is there anything else related to Node.js or web development that you'd 
+like to explore?
+
+Source: Conversation with Copilot, 7/16/2024
+(1) How To Create a Custom Middleware in Express.js | DigitalOcean. https://www.digitalocean.com/community/tutorials/nodejs-creating-your-own-express-middleware.
+(2) How to Build Middleware for Node JS: A Complete Guide. https://www.geeksforgeeks.org/how-to-build-middleware-for-node-js-a-complete-guide/.
+(3) Express middleware: A complete guide - LogRocket Blog. https://blog.logrocket.com/express-middleware-a-complete-guide/.
+(4) How to Build Middleware for Node.js: A Complete Guide - Turing. https://www.turing.com/kb/building-middleware-for-node-js.
+(5) Node.js Crash Course Tutorial #8 - Middleware. https://www.youtube.com/watch?v=_GJKAs7A0_4.
+(6) Start Creating Middleware Application - Node Middleware App - 37. https://www.youtube.com/watch?v=_tzMOCDrfC4.
+(7) Learn Express Middleware in 30 Minutes | Node.js Tutorial for Beginners #7. https://www.youtube.com/watch?v=bRqUaDRm8Po.
+(8) undefined. https://www.patreon.com/dailytuition.
+(9) undefined. https://www.udemy.com/user/akshay-kashyap-6/.
+
+Note:
+1, create a 'static' folder in project directory
+2, create a 'cool.txt' file in 'static' folder and write a text 'Express Middleware Application' inside 
+3, create a 'app.json' file in 'static' folder and write a json format
+4, insert an 'image, audio or video' file in 'static' folder

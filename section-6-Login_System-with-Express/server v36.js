@@ -1,6 +1,3 @@
-/* Understanding Cookies */
-//Note: npm i cookie-parser
-
 ////////////////////////
 //Require module
 ////////////////////////

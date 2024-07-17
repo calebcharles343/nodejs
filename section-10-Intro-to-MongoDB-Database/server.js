@@ -1,0 +1,37 @@
+////////////////////////
+//Require module
+////////////////////////
+const express = require("express");
+const bodyParser = require("body-parser");
+
+const route = require("./router");
+
+////////////////////////////////
+//Create instance of the modules
+////////////////////////////////
+const app = express();
+////////////////////////////
+//SPECIFY PORT
+///////////////////////////
+const port = process.env.PORT || 3000;
+
+///////////////////////////
+//USE MIDDLEWARE
+///////////////////////////
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use("/api", route);
+
+/////////////////////////////////////////////////
+//ROUTE METHODS
+/////////////////////////////////////////////////
+app.get("/", (req, res) => {
+  res.end("Routing App");
+});
+
+/////////////////////////
+//Create Server on PORT
+/////////////////////////
+app.listen(port, () =>
+  console.log(`Listening to the server on http://localhost:${port}`)
+);

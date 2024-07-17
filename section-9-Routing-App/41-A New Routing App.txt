@@ -1,0 +1,6 @@
+Note:
+1, create a 'server.js' file using express http server
+2, create a 'router.js' file for route logic
+3, in 'router.js' file require the 'express' and the express.Router() method
+   e.g. module const route = express.Router();
+4, create a 'database.js' file to mimic a real database if a database is not available
